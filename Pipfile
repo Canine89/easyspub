@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flake8 = "*"
+black = "*"
+django-cors-headers = "*"
+djangorestframework = "*"
+djangorestframework-jwt = "*"
+django-rest-auth = "*"
+allauth = "*"
+django-allauth = "*"
+django-taggit-serializer = "*"
+
+[requires]
+python_version = "3.8"
