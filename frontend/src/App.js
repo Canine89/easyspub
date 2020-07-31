@@ -61,7 +61,7 @@ class App extends React.Component {
         <Router>
           <header>
             <Link to="/">
-              <button>Home</button>
+              <button>Home 홈버트은</button>
             </Link>
             <Link to="/about">
               <button>About</button>
