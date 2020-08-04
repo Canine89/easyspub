@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
 
 function LoginForm(props) {
   return (
@@ -12,6 +14,9 @@ function LoginForm(props) {
         />
         <input type="submit" />
       </form>
+      <>
+        <Route exact path={`${props.match.path}`} render={() => <h3>로그인 화면</h3>}/>
+      </>
     </>
   );
 }

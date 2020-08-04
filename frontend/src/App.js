@@ -1,18 +1,15 @@
 import React from "react";
-import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import configureStore from "./_configureStore";
-import { setUser, resetUser } from "./_actions/userAction";
+import { setUser, resetUser } from "./actions/userAction";
 import LoginForm from "./LoginForm";
 import LogoutForm from "./LogoutForm";
 import NotFound from "./NotFound";
+import Home from "./Home";
+import About from "./About";
 
 class App extends React.Component {
-  store = configureStore();
-
   componentDidMount() {
-    // nothing...
-    // localStorage.setItem("hi", "canine");
+    this._login("canine", "quddkfl1");
   }
 
   _login = (username, password) => {
@@ -57,28 +54,28 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider store={this.store}>
-        <Router>
-          <header>
-            <Link to="/">
-              <button>Home 홈버트은</button>
-            </Link>
-            <Link to="/about">
-              <button>About</button>
-            </Link>
-            <Link to="/login">
-              <button>Login</button>
-            </Link>
-          </header>
-          <hr />
-          <main>
-            <Switch>
-              <Route path="/login" exact component={LoginForm} />
-              <Route component={NotFound} />
-            </Switch>
-          </main>
-        </Router>
-      </Provider>
+      <Router>
+        <header>
+          <Link to="/">
+            <button>Home 홈버트은</button>
+          </Link>
+          <Link to="/about">
+            <button>About</button>
+          </Link>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+        </header>
+        <hr />
+        <main>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/login" exact component={LoginForm} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+      </Router>
     );
   }
 }

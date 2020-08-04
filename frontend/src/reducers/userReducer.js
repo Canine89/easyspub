@@ -1,11 +1,10 @@
-import { SET_USER, RESET_USER } from "../_actions/userAction";
+import { SET_USER, RESET_USER } from "../actions/userAction";
 
 const initState = {
-  username: null,
-  isLoggedIn: false,
+  isLoggedIn: localStorage.getItem("jwt") || false,
 };
 
-export default function reducer(state = initState, action) {
+function reducer(state = initState, action) {
   const { type, payload } = action;
 
   switch (type) {
@@ -20,3 +19,5 @@ export default function reducer(state = initState, action) {
     }
   }
 }
+
+export default reducer;
