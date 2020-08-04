@@ -4,21 +4,27 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { routerMiddleware, connectRouter } from "connected-react-router";
 import { createBrowserHistory } from "history";
 
-// import reducers...
+// import reducers
 import user from "./reducers/userReducer";
 
-const env = process.env.NODE_ENV;
+// make history object
 const history = createBrowserHistory();
+
+// setting middelwares
 const middlewares = [thunk];
 
+// setting logger when env.NODE_ENV is "development"
+const env = process.env.NODE_ENV;
 if (env === "development") {
   const { logger } = require("redux-logger");
   middlewares.push(logger); // 항상 마지막에 푸시해야 함
 }
 
+// combine reduer
 const reducer = (history) =>
   combineReducers({ user, router: connectRouter(history) });
 
+// make store
 let store = (initialState) =>
   createStore(
     reducer(history),

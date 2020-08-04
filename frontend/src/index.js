@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import store, { history } from "./configureStore";
 
-import App from "./App";
+import App from "./components/App";
 
 ReactDOM.render(
   <Provider store={store}>

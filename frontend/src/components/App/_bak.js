@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import { setUser, resetUser } from "./actions/userAction";
-import LoginForm from "./LoginForm";
-import LogoutForm from "./LogoutForm";
-import NotFound from "./NotFound";
-import Home from "./Home";
-import About from "./About";
+import { setUser, resetUser } from "../../actions/userAction";
+import LoginForm from "../../LoginForm";
+import LogoutForm from "../../LogoutForm";
+import NotFound from "../../NotFound";
+import Home from "../../Home";
+import About from "../../About";
 
 class App extends React.Component {
   componentDidMount() {
