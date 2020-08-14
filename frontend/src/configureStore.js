@@ -10,7 +10,7 @@ import user from "./reducers/userReducer";
 // make history object
 const history = createBrowserHistory();
 
-// setting middelwares
+// setting middlewares
 const middlewares = [thunk];
 
 // setting logger when env.NODE_ENV is "development"

@@ -1,4 +1,5 @@
 import React from "react";
+import LandingPage from "../LandingPage";
 import { Route, Switch } from "react-router-dom";
 
 const App = (props) => [
@@ -7,7 +8,7 @@ const App = (props) => [
 
 const PrivateRoutes = (props) => (
   <Switch>
-    <Route path="/" exact render={() => "feed!"} />
+    <Route path="/" exact component={LandingPage} />
     <Route path="/explore" render={() => "explore!"} />
   </Switch>
 );
