@@ -1,9 +1,14 @@
 @import "../../config/_variables";
 
 .footer {
-  color: $easys-it-color;
+  color: $gray;
+  text-align: center;
   .copyrights {
-    width: 50%;
+    letter-spacing: $copyrights-spacing;
+    width: $full-width;
+    span {
+      margin-right: 3px;
+    }
   }
   .address {
   }
@@ -16,8 +21,5 @@
   .email {
   }
   .copyright {
-  }
-  .span {
-    color: $gray;
   }
 }
